@@ -164,6 +164,8 @@ impl Session {
         match Notification::new()
             .summary("Pomoxide Timer")
             .body(message)
+            .appname("Pomoxide")
+            .timeout(0)
             .show()
         {
             Ok(_msg) => {}
