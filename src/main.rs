@@ -2,6 +2,8 @@ mod pomodoro;
 mod controller;
 mod presentation;
 mod util;
+mod config;
+use crate::config::read_config;
 use crate::util::event::{Event, Events};
 use std::{error::Error, io};
 use termion::{input::MouseTerminal, raw::IntoRawMode, screen::AlternateScreen};
@@ -27,7 +29,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let backend = TermionBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
     let events = Events::new();
-    let mut session = Session::new();
+    let config = read_config();
+    let mut session = Session::new(config);
     while session.is_on() {
         session.update();
         let pres = Presentation::new(&session);

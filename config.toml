@@ -1,0 +1,7 @@
+work_duration = 25
+break_duration = 5
+[keybindings]
+pause = 's'
+quit = 'q'
+reset = 'j'
+skip = 'l'
