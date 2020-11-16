@@ -1,4 +1,3 @@
-use serde::{Deserialize, Serialize};
 use serde_derive::{Deserialize, Serialize};
 use dirs::home_dir;
 use std::fs::File;

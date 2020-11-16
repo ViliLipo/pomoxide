@@ -1,6 +1,6 @@
 [package]
 name = "pomoxide"
-version = "1.0.1"
+version = "1.0.2"
 authors = ["Vili Lipo <vili.lipo@helsinki.fi>"]
 edition = "2018"
 license= "GPL-2.0"

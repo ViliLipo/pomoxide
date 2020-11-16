@@ -4,15 +4,15 @@ mod presentation;
 mod util;
 mod config;
 use crate::config::read_config;
-use crate::util::event::{Event, Events};
+use crate::util::event::{Events};
 use std::{error::Error, io};
 use termion::{input::MouseTerminal, raw::IntoRawMode, screen::AlternateScreen};
 use tui::{
     backend::TermionBackend,
     layout::{Alignment, Constraint, Direction, Layout},
-    style::{Color, Modifier, Style},
+    style::{Modifier, Style},
     text::{Span, Spans},
-    widgets::{Block, Borders, Paragraph, Wrap},
+    widgets::{Block, Borders, Paragraph},
     Terminal,
 };
 
