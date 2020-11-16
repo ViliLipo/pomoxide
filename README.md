@@ -11,13 +11,14 @@ Install the native dependencies for your system.
 
 ## Usage
 
-Run the binary with command `pomoxide`.
+Run the binary with command `pomoxide` to start the application.
+
 With the default configuration this application
 uses 25 minute working periods with 5 minute breaks in between.
+When the period ends the app plays a sound and displays a notification.
 
 To configure the application copy  `example-pomoxide-config.toml`
 to your config folder:
-
 ```
 cp example-pomoxide-config.toml ~/.config/pomoxide-config.toml
 
