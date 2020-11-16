@@ -1,6 +1,6 @@
 [package]
 name = "pomoxide"
-version = "0.1.0"
+version = "1.0.0"
 authors = ["Vili Lipo <vili.lipo@helsinki.fi>"]
 edition = "2018"
 
@@ -15,3 +15,4 @@ toml = "0.5.3"
 serde = "1.0.117"
 serde_derive = "1.0.96"
 bytes = "0.4.12"
+dirs = "2.0.2"

@@ -16,7 +16,6 @@ use tui::{
     Terminal,
 };
 
-use controller::handle_input;
 use pomodoro::{Session};
 use presentation::{Presentation};
 
@@ -31,6 +30,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let events = Events::new();
     let config = read_config();
     let mut session = Session::new(config);
+    let controller = controller::Controller::new(&config);
     while session.is_on() {
         session.update();
         let pres = Presentation::new(&session);
@@ -57,11 +57,17 @@ fn main() -> Result<(), Box<dyn Error>> {
                         Style::default().add_modifier(Modifier::BOLD),
                     ))
             };
+            let bindings_text = if config.show_bindings {
+                controller.get_description()
+            } else {
+                String::new()
+            };
             let block_texts = vec![
                 Spans::from(Span::styled(pres.time_left, Style::default())),
                 Spans::from(Span::styled(pres.phase, Style::default())),
                 Spans::from(Span::styled(pres.tomatoes_done, Style::default())),
                 Spans::from(Span::styled(pres.paused, Style::default())),
+                Spans::from(Span::styled(bindings_text, Style::default())),
             ];
             let paragraph = Paragraph::new(block_texts.clone())
                 .style(Style::default())
@@ -69,7 +75,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 .alignment(Alignment::Left);
             f.render_widget(paragraph, chunks[0]);
         })?;
-        handle_input(&events, &mut session);
+        controller.handle_input(&events, &mut session);
     }
     Ok(())
 }
