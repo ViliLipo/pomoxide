@@ -6,7 +6,7 @@ edition = "2018"
 license-file = "LICENSE"
 repository = "https://github.com/ViliLipo/pomoxide"
 homepage = "https://github.com/ViliLipo/pomoxide"
-description = "A CLI Pomodoro timer written in Rust"
+description = "A CLI Pomodoro timer written in Rust."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
