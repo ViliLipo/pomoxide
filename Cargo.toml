@@ -3,6 +3,9 @@ name = "pomoxide"
 version = "1.0.0"
 authors = ["Vili Lipo <vili.lipo@helsinki.fi>"]
 edition = "2018"
+licence = "GPL-3.0.0"
+repository = "https://github.com/ViliLipo/pomoxide"
+homepage = "https://github.com/ViliLipo/pomoxide"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
